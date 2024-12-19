@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC Inputs</title>
+    <meta http-equiv="refresh" content="1"> <!-- Actualiza la página cada 5 segundos -->
+    <style>
+        .led {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+        }
+        .on {
+            background-color: green;
+        }
+        .off {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>PLC Inputs</h1>
+    <div id="led-container">
+        {% for input in plc_inputs %}
+            <div class="led {% if input %}on{% else %}off{% endif %}"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>
